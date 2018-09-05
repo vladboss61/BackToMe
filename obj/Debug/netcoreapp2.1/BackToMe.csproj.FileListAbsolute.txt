@@ -1,0 +1,14 @@
+D:\Projects\CSharp\BackToMe\BackToMe\bin\Debug\netcoreapp2.1\BackToMe.deps.json
+D:\Projects\CSharp\BackToMe\BackToMe\bin\Debug\netcoreapp2.1\BackToMe.runtimeconfig.json
+D:\Projects\CSharp\BackToMe\BackToMe\bin\Debug\netcoreapp2.1\BackToMe.runtimeconfig.dev.json
+D:\Projects\CSharp\BackToMe\BackToMe\bin\Debug\netcoreapp2.1\BackToMe.dll
+D:\Projects\CSharp\BackToMe\BackToMe\bin\Debug\netcoreapp2.1\BackToMe.pdb
+D:\Projects\CSharp\BackToMe\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.csprojAssemblyReference.cache
+D:\Projects\CSharp\BackToMe\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.csproj.CoreCompileInputs.cache
+D:\Projects\CSharp\BackToMe\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.RazorAssemblyInfo.cache
+D:\Projects\CSharp\BackToMe\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.RazorAssemblyInfo.cs
+D:\Projects\CSharp\BackToMe\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.AssemblyInfoInputs.cache
+D:\Projects\CSharp\BackToMe\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.AssemblyInfo.cs
+D:\Projects\CSharp\BackToMe\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.RazorTargetAssemblyInfo.cache
+D:\Projects\CSharp\BackToMe\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.dll
+D:\Projects\CSharp\BackToMe\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.pdb
