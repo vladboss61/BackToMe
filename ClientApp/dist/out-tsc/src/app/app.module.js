@@ -6,8 +6,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppComponent } from './app.component';
+import { HttpModule } from '@angular/http';
+//import { Http } from '@angular/http';
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -18,7 +22,10 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 BrowserModule,
-                BrowserAnimationsModule
+                BrowserAnimationsModule,
+                HttpClientModule,
+                HttpClient,
+                HttpModule,
             ],
             providers: [],
             bootstrap: [AppComponent]

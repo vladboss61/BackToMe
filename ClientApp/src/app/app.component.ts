@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Hello World and vlad starting LeartAngular';
+  public title = 'Hello World and vlad starting LearnAngular';
+  public sel = 'Bla-bla';
+  public values: string[];
+
+  constructor() {
+    this.values = ["Render now", "Now Test", "Third Try"];
+    //this.http
+    //  .get('/api/values')
+    //  .subscribe(result => {
+    //      console.log("Request");
+    //    this.values = result as string[];
+    //  },
+    //  error => console.error(error));
+  }
 }

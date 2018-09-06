@@ -24,6 +24,7 @@ namespace BackToMe
                  .Build();
 
             var serction = config.GetSection("iisSettings")["windowsAuthentication"];
+
             var config2 = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)                

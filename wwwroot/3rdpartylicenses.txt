@@ -103,7 +103,7 @@ MIT
 MIT
 MIT
 
-@angular/core@6.1.6
+@angular/core@6.1.7
 MIT
 MIT
 
