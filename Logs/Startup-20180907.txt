@@ -243,3 +243,63 @@ i я╜вwdmя╜г: Compiled successfully.
 2018-09-07T17:33:06.9765659+03:00 0HLGKPQJ2H3SM:00000001 [INF] Request finished in 55.3502ms 304 application/javascript (791a596a)
 2018-09-07T17:33:20.0601069+03:00  [ERR] internal/process/per_thread.js:194
  (5574a288)
+2018-09-07T18:07:51.5651179+03:00  [INF] Starting @angular/cli on port 51295... (53ffc0ac)
+2018-09-07T18:08:32.8069516+03:00  [INF] > client-app@0.0.0 start D:\Projects\CSharp\BackToMe\BackToMe\ClientApp
+> ng serve "--port" "51295"
+
+** Angular Live Development Server is listening on localhost:51295, open your browser on http://localhost:51295/ **
+ (aedcc61d)
+2018-09-07T18:09:02.3295056+03:00  [INF] Date: 2018-09-07T15:09:02.282Z
+Hash: 9a8e429da104bbce1652
+Time: 28343ms
+chunk {main} main.js, main.js.map (main) 11.7 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 77.7 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.54 MB [initial] [rendered]
+i я╜вwdmя╜г: Compiled successfully.
+ (ceebac0d)
+2018-09-07T18:12:26.2410054+03:00  [INF] Starting @angular/cli on port 51770... (7c9b6206)
+2018-09-07T18:12:38.5400231+03:00  [INF] > client-app@0.0.0 start D:\Projects\CSharp\BackToMe\BackToMe\ClientApp
+> ng serve "--port" "51770"
+
+** Angular Live Development Server is listening on localhost:51770, open your browser on http://localhost:51770/ **
+ (188f80ad)
+2018-09-07T18:13:00.5794815+03:00  [INF] Date: 2018-09-07T15:13:00.539Z
+Hash: 9a8e429da104bbce1652
+Time: 21639ms
+chunk {main} main.js, main.js.map (main) 11.7 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 77.7 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.54 MB [initial] [rendered]
+i я╜вwdmя╜г: Compiled successfully.
+ (3704ba22)
+2018-09-07T18:14:45.0680595+03:00  [ERR] internal/process/per_thread.js:194
+ (5574a288)
+2018-09-07T18:15:30.2320224+03:00  [INF] Starting @angular/cli on port 52099... (7c61ff77)
+2018-09-07T18:15:39.5858279+03:00  [INF] > client-app@0.0.0 start D:\Projects\CSharp\BackToMe\BackToMe\ClientApp
+> ng serve "--port" "52099"
+
+** Angular Live Development Server is listening on localhost:52099, open your browser on http://localhost:52099/ **
+ (8a5e6bfc)
+2018-09-07T18:15:54.2600883+03:00  [INF] Date: 2018-09-07T15:15:54.229Z
+Hash: 9a8e429da104bbce1652
+Time: 14376ms
+chunk {main} main.js, main.js.map (main) 11.7 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 77.7 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.54 MB [initial] [rendered]
+i я╜вwdmя╜г: Compiled successfully.
+ (cc1c1733)
+2018-09-07T18:16:16.6458385+03:00 0HLGKQJDBO3GC:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/   (ca22a1cb)
+2018-09-07T18:16:16.7783754+03:00 0HLGKQJDBO3GC:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2018-09-07T18:16:18.5513077+03:00 0HLGKQJDBO3GC:00000001 [INF] Request finished in 1908.6285ms 0  (791a596a)
+2018-09-07T18:16:18.6151891+03:00 0HLGKQJDBO3GD:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/   (ca22a1cb)
+2018-09-07T18:16:19.7024748+03:00 0HLGKQJDBO3GD:00000001 [INF] Request finished in 1087.2967ms 200 text/html; charset=UTF-8 (791a596a)
+2018-09-07T18:17:49.2311362+03:00  [INF] Starting @angular/cli on port 52320... (3428efe7)
+2018-09-07T18:17:50.0081417+03:00  [ERR] ^Cnpm ERR! code EPIPE
+ (c32e565f)
+2018-09-07T18:17:50.0097658+03:00  [ERR] npm ERR! errno EPIPE
+ (4247d45a)
