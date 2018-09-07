@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+
+using BackToMe.Extensions;
 
 namespace BackToMe.Controllers
 {
@@ -11,29 +14,36 @@ namespace BackToMe.Controllers
     [ApiController]    
     public class ValuesController : ControllerBase
     { 
-        public ILogger Logger { get; }        
+        public ILogger Logger { get; }
+        public IConfiguration Configuration { get; }
 
-        public ValuesController(ILoggerFactory loggerFactory)
+        public ValuesController(
+            ILoggerFactory loggerFactory, 
+            IConfiguration configuration)
         {
+            Configuration = configuration;
             Logger = loggerFactory
                          .AddConsole()
+                         .AddFile(configuration.GetLogPath(nameof(ValuesController)))
                          .CreateLogger<ValuesController>() ?? throw new ArgumentNullException(nameof(loggerFactory));            
         }
 
         // GET api/values
         [HttpGet("/api/values")]
-        public ActionResult<IEnumerable<string>> Get()
+        public async Task<ActionResult<IEnumerable<string>>> Get()
         {
             Logger.Log(LogLevel.Debug, $"{nameof(Get)}");                        
-            return new string[] { "value1", "value2" };
+            return await Task.FromResult(new string[] { "value1", "value2" })
+                .ConfigureAwait(true);
         }
 
         // GET api/values/5
         [HttpGet("{id}")]        
-        public ActionResult<string> Get(int id)
-        {
+        public async Task<ActionResult<string>> Get(int id)
+        {            
             Logger.Log(LogLevel.Debug, $"{nameof(Get)} id.");
-            return "value";
+            return await Task.FromResult("value")
+                .ConfigureAwait(true);
         }
 
         // POST api/values

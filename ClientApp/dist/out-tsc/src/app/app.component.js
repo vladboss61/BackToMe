@@ -8,19 +8,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 var AppComponent = /** @class */ (function () {
-    function AppComponent(http) {
-        var _this = this;
-        this.http = http;
+    function AppComponent() {
         this.title = 'Hello World and vlad starting LearnAngular';
         this.sel = 'Bla-bla';
-        this.http
-            .get('http://localhost:5000/api/values')
-            .subscribe(function (result) {
-            console.log("Request");
-            _this.values = result;
-        }, function (error) { return console.error(error); });
+        this.values = ["Render now", "Now Test", "Third Try"];
+        //this.http
+        //  .get('/api/values')
+        //  .subscribe(result => {
+        //      console.log("Request");
+        //    this.values = result as string[];
+        //  },
+        //  error => console.error(error));
     }
     AppComponent = __decorate([
         Component({
@@ -28,7 +27,7 @@ var AppComponent = /** @class */ (function () {
             templateUrl: './app.component.html',
             styleUrls: ['./app.component.css']
         }),
-        __metadata("design:paramtypes", [HttpClient])
+        __metadata("design:paramtypes", [])
     ], AppComponent);
     return AppComponent;
 }());

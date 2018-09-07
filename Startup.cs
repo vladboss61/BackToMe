@@ -1,46 +1,59 @@
 ﻿using System.IO;
+using BackToMe.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+
+using BackToMe.Extensions;
 
 namespace BackToMe
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration, ILoggerFactory loggerFactory)
+        private const string CurrentConnectionToDb = "HeroesDBConnection";
+
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            Logger = loggerFactory
-                .AddConsole()
-                .CreateLogger<Startup>();
         }
 
         public IConfiguration Configuration { get; }
-        public ILogger Logger { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSpaStaticFiles(c => { c.RootPath = "ClientApp/dist"; });            
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddDbContext<HeroesDbContext>(
+                options => options
+                    .UseSqlServer(Configuration
+                        .GetConnectionString(CurrentConnectionToDb)));          
+            
+            services.AddSpaStaticFiles(c => { c.RootPath = "ClientApp/dist"; });
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            Logger.Log(LogLevel.Debug, "Configuration Info");
+            var logger = loggerFactory
+                .AddConsole()
+                .AddFile(Configuration.GetLogPath(nameof(Startup)))
+                .CreateLogger<Startup>();
+
+            logger.LogDebug("Start configure File");
             if (env.IsDevelopment())
             {
-                Logger.Log(LogLevel.Debug, "Development mode");
+                logger.LogDebug($"Is dev mode: {env.IsDevelopment()}");
                 app.UseDeveloperExceptionPage();
             }
             else
             {
-                Logger.Log(LogLevel.Debug, "Not development mode");
+                logger.LogDebug("Not Dev");
                 app.UseHsts();
             }
 
@@ -53,16 +66,15 @@ namespace BackToMe
             //    }
             //});
 
-
             app.UseHttpsRedirection();
             // configure the app to serve index.html from /wwwroot folder                
             app.UseStaticFiles();
-            app.UseSpaStaticFiles();            
+            app.UseSpaStaticFiles();
             // configure the app for usage as api
             app.UseMvcWithDefaultRoute();
             app.UseMvc(routes =>
             {
-                Logger.Log(LogLevel.Debug, "UseMVC");
+                logger.LogDebug("Use MVC Routing");
                 routes.MapRoute(name: "default", template: "{controller}/{action=index}/{id}");
             });
 
@@ -76,12 +88,12 @@ namespace BackToMe
 
                 if (env.IsDevelopment())
                 {
-                    Logger.Log(LogLevel.Debug, "SPA");
+                    logger.Log(LogLevel.Debug, "SPA is configured");
                     spa.UseAngularCliServer("start");
                 }
 
-                spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");                
-            });                        
+                spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
+            });
         }
     }
 }
