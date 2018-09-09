@@ -4,7 +4,7 @@ $BackEnd = "$scriptPath\.."
 $ClientApp = "$scriptPath\..\ClientApp"
 $defaultPeriodOfTimeToUpBackEnd = 80
 
-[int]$typeOfDeploy = Read-Host "1-Back-End`n2-Client`n3-Both of"
+[int]$typeOfDeploy = Read-Host "1-Back-End 2-Client 3-Both of`n"
 switch ($typeOfDeploy) {
      1 {         
          & dotnet.exe run --project $BackEnd --launch-profile $Launch 

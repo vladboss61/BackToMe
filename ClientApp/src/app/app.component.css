@@ -5,3 +5,9 @@ ul {
 ul span {
   border: dotted;  
 }
+div img{
+  width: 200px;
+} 
+li span{
+  background-color: aqua;
+}

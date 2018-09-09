@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Http } from '@angular/http';
-import { Heroe } from '../models/Heroe';
+import { Heroe } from 'models/Heroe';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +24,7 @@ export class AppComponent {
     //  },
     //  error => console.error(error));
   }  
-  ngOnInit() {
+  ngOnInit() {    
     console.log("ngOnInit is activated");
     this._http.get('/api/heroes').subscribe(values => {
       this.heroes = values.json() as Heroe[];
