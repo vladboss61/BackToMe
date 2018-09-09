@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Http } from '@angular/http';
+import { Heroe } from '../models/Heroe';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +9,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public title = 'Hello World and vlad starting LearnAngular';
-  public sel = 'Bla-bla';
+  public static sel = 'Bla-bla';
   public values: string[];
+  public heroes: Heroe[] = [];
 
-  constructor() {
+  constructor(private _http: Http) {// DI http into constructor 
     this.values = ["Render now", "Now Test", "Third Try"];
+    this.ngOnInit();     
     //this.http
     //  .get('/api/values')
     //  .subscribe(result => {
@@ -19,5 +23,12 @@ export class AppComponent {
     //    this.values = result as string[];
     //  },
     //  error => console.error(error));
+  }  
+  ngOnInit() {
+    console.log("ngOnInit is activated");
+    this._http.get('/api/heroes').subscribe(values => {
+      this.heroes = values.json() as Heroe[];
+    });
   }
+  
 }

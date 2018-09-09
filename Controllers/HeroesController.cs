@@ -43,7 +43,7 @@ namespace BackToMe.Controllers
             return await Task.FromResult(new [] {
                     new Heroe(){Id = 1,Name = "Vlad", Age =20, Sex = true},
                     new Heroe(){Id = 1,Name = "Vlad", Age =20, Sex = true}})
-                .ConfigureAwait(true);
+                .ConfigureAwait(false);
         }
 
         // GET api/heroes/5
@@ -69,7 +69,6 @@ namespace BackToMe.Controllers
         public void Put(int id, [FromBody] string value)
         {
             Logger.Log(LogLevel.Debug, $"{nameof(Put)}");
-
         }
 
         // DELETE api/heroes/5

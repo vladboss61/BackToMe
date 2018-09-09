@@ -17,12 +17,19 @@ namespace BackToMe
     {
         private const string CurrentConnectionToDb = "HeroesDBConnection";
 
-        public Startup(IConfiguration configuration)
+        public Startup(
+            IConfiguration configuration, 
+            IHostingEnvironment environment, 
+            ILoggerFactory loggerFactory)
         {
             Configuration = configuration;
+            HostingEnvironment = environment;
+            LoggerFactory = loggerFactory;
         }
 
         public IConfiguration Configuration { get; }
+        public ILoggerFactory  LoggerFactory { get; }
+        public IHostingEnvironment HostingEnvironment { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -31,10 +38,12 @@ namespace BackToMe
                 options => options
                     .UseSqlServer(Configuration
                         .GetConnectionString(CurrentConnectionToDb)));          
-            
-            services.AddSpaStaticFiles(c => { c.RootPath = "ClientApp/dist"; });
-            services.AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+                                    
+            //services.AddSpaStaticFiles(configuration => configuration.RootPath = "ClientApp/dist");
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //TODO: INVISTIGATE THIS METHOD 
+            //services.AddHttpClient();            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,34 +75,33 @@ namespace BackToMe
             //    }
             //});
 
-            app.UseHttpsRedirection();
-            // configure the app to serve index.html from /wwwroot folder                
-            app.UseStaticFiles();
-            app.UseSpaStaticFiles();
-            // configure the app for usage as api
-            app.UseMvcWithDefaultRoute();
-            app.UseMvc(routes =>
+            //app.UseHttpsRedirection();
+            //// configure the app to serve index.html from /wwwroot folder                
+            //app.UseStaticFiles();
+            //app.UseSpaStaticFiles();
+            //// configure the app for usage as api
+            //app.UseMvcWithDefaultRoute();
+            app.UseMvc(configureRoutes: routes =>
             {
                 logger.LogDebug("Use MVC Routing");
                 routes.MapRoute(name: "default", template: "{controller}/{action=index}/{id}");
             });
 
-            app.UseSpa(spa =>// sap is single page application
-            {
-                // To learn more about options for serving an Angular SPA from ASP.NET Core,
-                // see https://go.microsoft.com/fwlink/?linkid=864501                
+            //app.UseSpa(spa =>// sap is single page application
+            //{
+            //    // To learn more about options for serving an Angular SPA from ASP.NET Core,
+            //    // see https://go.microsoft.com/fwlink/?linkid=864501                                
+            //    spa.Options.SourcePath = "ClientApp";
+            //    spa.Options.StartupTimeout = new System.TimeSpan(0, 0, 80);
 
-                spa.Options.SourcePath = "ClientApp";
-                spa.Options.StartupTimeout = new System.TimeSpan(0, 0, 80);
+            //    if (env.IsDevelopment())
+            //    {
+            //        logger.Log(LogLevel.Debug, "SPA is configured");                    
+            //        spa.UseAngularCliServer("start");
+            //    }
 
-                if (env.IsDevelopment())
-                {
-                    logger.Log(LogLevel.Debug, "SPA is configured");
-                    spa.UseAngularCliServer("start");
-                }
-
-                spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
-            });
+            //    //spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
+            //});
         }
     }
 }

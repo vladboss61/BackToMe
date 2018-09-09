@@ -12,11 +12,14 @@ namespace BackToMe.Models
         [Required]
         [Range(0, long.MaxValue)]
         public long Id { get; set; }
+
         [Required]
         public string Name { get; set; }
+
         [Required]
         [Range(1, 120)]
         public int Age { get; set; }
+
         [Required]
         public bool Sex { get; set; }       
     }

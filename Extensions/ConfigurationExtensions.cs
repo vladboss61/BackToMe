@@ -10,6 +10,7 @@ namespace BackToMe.Extensions
     internal static class ConfigurationExtensions
     {
         private const string FileExpansion = ".txt";
+
         public static string GetLogPath(this IConfiguration configuration, string nameOfLogFile) =>
             Path.Combine(configuration?.GetSection("Logging")?["Path"], $"{nameOfLogFile}{FileExpansion}");
     }

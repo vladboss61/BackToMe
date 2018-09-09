@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BackToMe.Extensions;
-using BackToMe.Models;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+
+using BackToMe.Extensions;
+using BackToMe.Models;
+
 
 namespace BackToMe.Context
 {
@@ -23,9 +26,12 @@ namespace BackToMe.Context
                 .CreateLogger<HeroesDbContext>();
 
             logger.LogDebug("Created data base! Before EnsureCreated");
+
             Database.EnsureCreated();
+
             logger.LogDebug("Created data base! After EnsureCreated");
         }
         public DbSet<Heroe> Heroes { get; }
+        
     }
 }

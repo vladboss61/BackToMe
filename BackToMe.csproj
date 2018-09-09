@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\src\models\" />
     <Folder Include="Logs\" />
+    <Folder Include="Scripts\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
