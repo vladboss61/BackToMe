@@ -18,8 +18,8 @@ namespace BackToMe
         private const string CurrentConnectionToDb = "HeroesDBConnection";
 
         public Startup(
-            IConfiguration configuration, 
-            IHostingEnvironment environment, 
+            IConfiguration configuration,
+            IHostingEnvironment environment,
             ILoggerFactory loggerFactory)
         {
             Configuration = configuration;
@@ -28,7 +28,7 @@ namespace BackToMe
         }
 
         public IConfiguration Configuration { get; }
-        public ILoggerFactory  LoggerFactory { get; }
+        public ILoggerFactory LoggerFactory { get; }
         public IHostingEnvironment HostingEnvironment { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -37,11 +37,14 @@ namespace BackToMe
             services.AddDbContext<HeroesDbContext>(
                 options => options
                     .UseSqlServer(Configuration
-                        .GetConnectionString(CurrentConnectionToDb)));          
-                                    
+                        .GetConnectionString(CurrentConnectionToDb)));
+
+
             //services.AddSpaStaticFiles(configuration => configuration.RootPath = "ClientApp/dist");
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddCors();
+
             //TODO: INVISTIGATE THIS METHOD 
             //services.AddHttpClient();            
         }
@@ -76,17 +79,18 @@ namespace BackToMe
             //});
 
             //app.UseHttpsRedirection();
-            //// configure the app to serve index.html from /wwwroot folder                
+            // configure the app to serve index.html from /wwwroot folder                
             //app.UseStaticFiles();
             //app.UseSpaStaticFiles();
-            //// configure the app for usage as api
-            //app.UseMvcWithDefaultRoute();
+            // configure the app for usage as api
+
+            app.UseMvcWithDefaultRoute();
             app.UseMvc(configureRoutes: routes =>
             {
                 logger.LogDebug("Use MVC Routing");
                 routes.MapRoute(name: "default", template: "{controller}/{action=index}/{id}");
             });
-
+            
             //app.UseSpa(spa =>// sap is single page application
             //{
             //    // To learn more about options for serving an Angular SPA from ASP.NET Core,
@@ -96,12 +100,16 @@ namespace BackToMe
 
             //    if (env.IsDevelopment())
             //    {
-            //        logger.Log(LogLevel.Debug, "SPA is configured");                    
-            //        spa.UseAngularCliServer("start");
+            //        logger.Log(LogLevel.Debug, "SPA is configured");
+            //        spa.UseAngularCliServer(npmScript: "start");
             //    }
 
-            //    //spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
+            //    spa.UseProxyToSpaDevelopmentServer("http://localhost:4200"); // 
             //});
+
+            // позволяет серверу принимать запросы с порта 4200
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200")); 
+            
         }
     }
 }

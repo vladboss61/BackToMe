@@ -11302,3 +11302,188 @@ END;" (0723d8ff)
 2018-09-09T14:18:15.4647269+03:00 0HLGM8NL9JNAA:00000001 [INF] Request finished in 864.2734ms 200 application/json; charset=utf-8 (791a596a)
 2018-09-09T14:18:15.4638557+03:00 0HLGM8NL9JNAA:00000001 [INF] Executed action "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" in 861.3031ms (afa2e885)
 2018-09-09T14:18:15.4648714+03:00 0HLGM8NL9JNAA:00000001 [INF] Request finished in 864.2734ms 200 application/json; charset=utf-8 (791a596a)
+2018-09-09T14:47:43.3508620+03:00 0HLGM983KAKHM:00000001 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"HeroesDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-09-09T14:47:46.0640397+03:00 0HLGM983KAKHM:00000001 [INF] Executed DbCommand ("1,275"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2018-09-09T14:47:46.1614918+03:00 0HLGM983KAKHM:00000001 [INF] Executing action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" - Validation state: Valid (dad538d7)
+2018-09-09T14:47:46.1950382+03:00 0HLGM983KAKHM:00000001 [INF] Executed action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 17.8281ms. (50a9e262)
+2018-09-09T14:47:46.2217396+03:00 0HLGM983KAKHM:00000001 [INF] Executing ObjectResult, writing value of type '"BackToMe.Models.Heroe[]"'. (8a1b66c8)
+2018-09-09T14:47:46.8457890+03:00 0HLGM983KAKHM:00000001 [INF] Executed action "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" in 6051.6217ms (afa2e885)
+2018-09-09T14:47:46.8833808+03:00 0HLGM983KAKHM:00000001 [INF] Request finished in 8701.2958ms 200 application/json; charset=utf-8 (791a596a)
+2018-09-09T14:47:51.3633880+03:00 0HLGM983KAKHO:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/   (ca22a1cb)
+2018-09-09T14:48:07.7472439+03:00  [INF] > client-app@0.0.0 start D:\Projects\CSharp\BackToMe\BackToMe\ClientApp
+> ng serve "--port" "57148"
+
+** Angular Live Development Server is listening on localhost:57148, open your browser on http://localhost:57148/ **
+ (6921f32d)
+2018-09-09T14:48:21.8989007+03:00  [INF] i я╜вwdmя╜г: wait until bundle finished: /
+ (f85dd3ae)
+2018-09-09T14:48:29.0545772+03:00  [INF] Date: 2018-09-09T11:48:28.959Z
+Hash: 79ae0b520190315e1dc4
+Time: 20367ms
+chunk {main} main.js, main.js.map (main) 13.1 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 77.7 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.86 MB [initial] [rendered]
+i я╜вwdmя╜г: Compiled successfully.
+ (1342301a)
+2018-09-09T14:48:29.1249063+03:00 0HLGM983KAKHO:00000001 [INF] Request finished in 37753.8186ms 200 text/html; charset=UTF-8 (791a596a)
+2018-09-09T14:52:22.3323572+03:00 0HLGM9AOCPLPP:00000001 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"HeroesDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-09-09T14:52:23.2860608+03:00 0HLGM9AOCPLPP:00000001 [INF] Executed DbCommand ("425"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2018-09-09T14:52:23.3622796+03:00 0HLGM9AOCPLPP:00000001 [INF] Executing action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" - Validation state: Valid (dad538d7)
+2018-09-09T14:52:23.4068814+03:00 0HLGM9AOCPLPP:00000001 [INF] Executed action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 24.3208ms. (50a9e262)
+2018-09-09T14:52:23.4365142+03:00 0HLGM9AOCPLPP:00000001 [INF] Executing ObjectResult, writing value of type '"BackToMe.Models.Heroe[]"'. (8a1b66c8)
+2018-09-09T14:52:23.8868929+03:00 0HLGM9AOCPLPP:00000001 [INF] Executed action "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" in 2802.438ms (afa2e885)
+2018-09-09T14:52:24.2285124+03:00 0HLGM9AOCPLPP:00000001 [INF] Request finished in 4096.9666ms 200 application/json; charset=utf-8 (791a596a)
+2018-09-09T14:52:29.3958876+03:00 0HLGM9AOCPLPR:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/   (ca22a1cb)
+2018-09-09T14:52:34.6892561+03:00  [INF] > client-app@0.0.0 start D:\Projects\CSharp\BackToMe\BackToMe\ClientApp
+> ng serve "--port" "57597"
+
+** Angular Live Development Server is listening on localhost:57597, open your browser on http://localhost:57597/ **
+ (d0bb6e43)
+2018-09-09T14:52:50.0342360+03:00  [INF] i я╜вwdmя╜г: wait until bundle finished: /
+ (f85dd3ae)
+2018-09-09T14:52:56.1426220+03:00  [INF] Date: 2018-09-09T11:52:56.076Z
+Hash: 79ae0b520190315e1dc4
+Time: 21048ms
+chunk {main} main.js, main.js.map (main) 13.1 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 77.7 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.86 MB [initial] [rendered]
+i я╜вwdmя╜г: Compiled successfully.
+ (64dd7234)
+2018-09-09T14:52:56.1947277+03:00 0HLGM9AOCPLPR:00000001 [INF] Request finished in 26784.0839ms 304  (791a596a)
+2018-09-09T14:53:22.3166331+03:00  [ERR] internal/process/per_thread.js:194
+ (5574a288)
+2018-09-09T14:55:29.1102416+03:00 0HLGM9CG0EBSM:00000001 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"HeroesDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-09-09T14:55:29.8571750+03:00 0HLGM9CG0EBSO:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/   (ca22a1cb)
+2018-09-09T14:55:31.4916388+03:00 0HLGM9CG0EBSM:00000001 [INF] Executed DbCommand ("1,362"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2018-09-09T14:55:31.6317135+03:00 0HLGM9CG0EBSM:00000001 [INF] Executing action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" - Validation state: Valid (dad538d7)
+2018-09-09T14:55:31.6872743+03:00 0HLGM9CG0EBSM:00000001 [INF] Executed action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 28.3455ms. (50a9e262)
+2018-09-09T14:55:31.7374472+03:00 0HLGM9CG0EBSM:00000001 [INF] Executing ObjectResult, writing value of type '"BackToMe.Models.Heroe[]"'. (8a1b66c8)
+2018-09-09T14:55:32.0839835+03:00 0HLGM9CG0EBSM:00000001 [INF] Executed action "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" in 4998.6279ms (afa2e885)
+2018-09-09T14:55:32.1138639+03:00 0HLGM9CG0EBSM:00000001 [INF] Request finished in 6321.5124ms 200 application/json; charset=utf-8 (791a596a)
+2018-09-09T14:55:40.3188548+03:00  [INF] > client-app@0.0.0 start D:\Projects\CSharp\BackToMe\BackToMe\ClientApp
+> ng serve "--port" "57870"
+
+** Angular Live Development Server is listening on localhost:57870, open your browser on http://localhost:57870/ **
+ (ba658182)
+2018-09-09T14:55:58.2485766+03:00  [INF] i я╜вwdmя╜г: wait until bundle finished: /
+ (f85dd3ae)
+2018-09-09T14:56:03.2695775+03:00  [INF] Date: 2018-09-09T11:56:03.223Z
+Hash: 79ae0b520190315e1dc4
+Time: 22340ms
+chunk {main} main.js, main.js.map (main) 13.1 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 77.7 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.86 MB [initial] [rendered]
+i я╜вwdmя╜г: Compiled successfully.
+ (0b570485)
+2018-09-09T14:56:03.2932338+03:00 0HLGM9CG0EBSO:00000001 [INF] Request finished in 33437.6342ms 304  (791a596a)
+2018-09-09T14:59:07.6117313+03:00 0HLGM9EH728IF:00000001 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"HeroesDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-09-09T14:59:08.7626477+03:00 0HLGM9EH728IF:00000001 [INF] Executed DbCommand ("361"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2018-09-09T14:59:08.8877614+03:00 0HLGM9EH728IF:00000001 [INF] Executing action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" - Validation state: Valid (dad538d7)
+2018-09-09T14:59:08.9231247+03:00 0HLGM9EH728IF:00000001 [INF] Executed action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 17.3165ms. (50a9e262)
+2018-09-09T14:59:08.9466155+03:00 0HLGM9EH728IF:00000001 [INF] Executing ObjectResult, writing value of type '"BackToMe.Models.Heroe[]"'. (8a1b66c8)
+2018-09-09T14:59:09.2825322+03:00 0HLGM9EH728IF:00000001 [INF] Executed action "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" in 2602.3968ms (afa2e885)
+2018-09-09T14:59:09.4202985+03:00 0HLGM9EH728IF:00000001 [INF] Request finished in 3899.2485ms 200 application/json; charset=utf-8 (791a596a)
+2018-09-09T14:59:11.8908910+03:00 0HLGM9EH728IF:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/   (ca22a1cb)
+2018-09-09T14:59:19.4921892+03:00  [INF] > client-app@0.0.0 start D:\Projects\CSharp\BackToMe\BackToMe\ClientApp
+> ng serve "--port" "58187"
+
+** Angular Live Development Server is listening on localhost:58187, open your browser on http://localhost:58187/ **
+ (164c4a73)
+2018-09-09T14:59:38.7680962+03:00  [INF] i я╜вwdmя╜г: wait until bundle finished: /
+ (f85dd3ae)
+2018-09-09T14:59:46.5944960+03:00  [INF] Date: 2018-09-09T11:59:46.179Z
+Hash: 79ae0b520190315e1dc4
+Time: 26322ms
+chunk {main} main.js, main.js.map (main) 13.1 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 77.7 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.86 MB [initial] [rendered]
+i я╜вwdmя╜г: Compiled successfully.
+ (4d4654d5)
+2018-09-09T14:59:46.7456220+03:00 0HLGM9EH728IF:00000002 [INF] Request finished in 34936.3286ms 304  (791a596a)
+2018-09-09T15:07:19.1379354+03:00 0HLGM9J48HKG9:00000001 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"HeroesDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-09-09T15:07:19.7321299+03:00 0HLGM9J48HKG9:00000001 [INF] Executed DbCommand ("276"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2018-09-09T15:07:19.8014241+03:00 0HLGM9J48HKG9:00000001 [INF] Executing action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" - Validation state: Valid (dad538d7)
+2018-09-09T15:07:19.8296430+03:00 0HLGM9J48HKG9:00000001 [INF] Executed action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 13.5001ms. (50a9e262)
+2018-09-09T15:07:19.8501871+03:00 0HLGM9J48HKG9:00000001 [INF] Executing ObjectResult, writing value of type '"BackToMe.Models.Heroe[]"'. (8a1b66c8)
+2018-09-09T15:07:20.0559618+03:00 0HLGM9J48HKG9:00000001 [INF] Executed action "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" in 1824.7627ms (afa2e885)
+2018-09-09T15:07:20.0800926+03:00 0HLGM9J48HKG9:00000001 [INF] Request finished in 2438.2288ms 200 application/json; charset=utf-8 (791a596a)
+2018-09-09T15:07:22.1250624+03:00 0HLGM9J48HKG9:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/   (ca22a1cb)
+2018-09-09T15:07:22.1412233+03:00 0HLGM9J48HKG9:00000002 [INF] Request finished in 22.8756ms 404  (791a596a)
+2018-09-09T15:07:54.8394896+03:00 0HLGM9J48HKGC:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/   (ca22a1cb)
+2018-09-09T15:07:54.8462940+03:00 0HLGM9J48HKGC:00000001 [INF] Request finished in 4.985ms 404  (791a596a)
+2018-09-09T15:08:13.7202266+03:00 0HLGM9JKMC6UG:00000001 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"HeroesDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-09-09T15:08:14.6693712+03:00 0HLGM9JKMC6UG:00000001 [INF] Executed DbCommand ("687"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2018-09-09T15:08:14.7283590+03:00 0HLGM9JKMC6UG:00000001 [INF] Executing action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" - Validation state: Valid (dad538d7)
+2018-09-09T15:08:14.7565119+03:00 0HLGM9JKMC6UG:00000001 [INF] Executed action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 10.5303ms. (50a9e262)
+2018-09-09T15:08:14.7819572+03:00 0HLGM9JKMC6UG:00000001 [INF] Executing ObjectResult, writing value of type '"BackToMe.Models.Heroe[]"'. (8a1b66c8)
+2018-09-09T15:08:15.0271349+03:00 0HLGM9JKMC6UG:00000001 [INF] Executed action "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" in 2381.1599ms (afa2e885)
+2018-09-09T15:08:15.0821328+03:00 0HLGM9JKMC6UG:00000001 [INF] Request finished in 3352.4611ms 200 application/json; charset=utf-8 (791a596a)
+2018-09-09T15:08:21.5654283+03:00 0HLGM9JKMC6UG:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/   (ca22a1cb)
+2018-09-09T15:08:21.5954845+03:00 0HLGM9JKMC6UG:00000002 [INF] Request finished in 20.9455ms 404  (791a596a)
+2018-09-09T15:10:02.9400327+03:00 0HLGM9KKPO2VK:00000001 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"HeroesDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-09-09T15:10:03.6594577+03:00 0HLGM9KKPO2VL:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/   (ca22a1cb)
+2018-09-09T15:10:04.3952020+03:00 0HLGM9KKPO2VK:00000001 [INF] Executed DbCommand ("651"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2018-09-09T15:10:04.5246910+03:00 0HLGM9KKPO2VK:00000001 [INF] Executing action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" - Validation state: Valid (dad538d7)
+2018-09-09T15:10:04.5918469+03:00 0HLGM9KKPO2VK:00000001 [INF] Executed action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 21.9233ms. (50a9e262)
+2018-09-09T15:10:04.6629342+03:00 0HLGM9KKPO2VK:00000001 [INF] Executing ObjectResult, writing value of type '"BackToMe.Models.Heroe[]"'. (8a1b66c8)
+2018-09-09T15:10:05.3817978+03:00 0HLGM9KKPO2VK:00000001 [INF] Executed action "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" in 4315.0282ms (afa2e885)
+2018-09-09T15:10:05.4184925+03:00 0HLGM9KKPO2VK:00000001 [INF] Request finished in 5785.1589ms 200 application/json; charset=utf-8 (791a596a)
+2018-09-09T15:10:16.4660841+03:00  [INF] > client-app@0.0.0 start D:\Projects\CSharp\BackToMe\BackToMe\ClientApp
+> ng serve --proxy-config proxy.config.json "--port" "59279"
+
+** Angular Live Development Server is listening on localhost:59279, open your browser on http://localhost:59279/ **
+ (72803db7)
+2018-09-09T15:10:30.9403957+03:00  [INF] i я╜вwdmя╜г: wait until bundle finished: /
+ (f85dd3ae)
+2018-09-09T15:10:37.8727122+03:00  [INF] Date: 2018-09-09T12:10:37.828Z
+Hash: 79ae0b520190315e1dc4
+Time: 21039ms
+chunk {main} main.js, main.js.map (main) 13.1 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 77.7 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.86 MB [initial] [rendered]
+i я╜вwdmя╜г: Compiled successfully.
+ (24346cf8)
+2018-09-09T15:10:38.0901689+03:00 0HLGM9KKPO2VL:00000001 [INF] Request finished in 34326.3083ms 200 text/html; charset=UTF-8 (791a596a)
+2018-09-09T15:19:10.5848265+03:00 0HLGM9PP4Q8FF:00000001 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"HeroesDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-09-09T15:19:11.1277101+03:00 0HLGM9PP4Q8FF:00000001 [INF] Executed DbCommand ("424"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2018-09-09T15:19:11.1429022+03:00 0HLGM9PP4Q8FF:00000001 [INF] Executing action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" - Validation state: Valid (dad538d7)
+2018-09-09T15:19:11.1579920+03:00 0HLGM9PP4Q8FF:00000001 [INF] Executed action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 6.6042ms. (50a9e262)
+2018-09-09T15:19:11.1750383+03:00 0HLGM9PP4Q8FF:00000001 [INF] Executing ObjectResult, writing value of type '"BackToMe.Models.Heroe[]"'. (8a1b66c8)
+2018-09-09T15:19:11.2486823+03:00 0HLGM9PP4Q8FF:00000001 [INF] Executed action "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" in 933.9927ms (afa2e885)
+2018-09-09T15:19:11.2638088+03:00 0HLGM9PP4Q8FF:00000001 [INF] Request finished in 1141.0091ms 200 application/json; charset=utf-8 (791a596a)
+2018-09-09T15:19:11.2704941+03:00 0HLGM9PP4Q8FG:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:4200/api/heroes   (ca22a1cb)
+2018-09-09T15:19:11.2712747+03:00 0HLGM9PP4Q8FG:00000001 [INF] Route matched with "{action = \"GetHeroes\", controller = \"Heroes\"}". Executing action "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" (a44c0341)
+2018-09-09T15:19:11.2873905+03:00 0HLGM9PP4Q8FG:00000001 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"HeroesDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-09-09T15:19:11.2872603+03:00 0HLGM9PP4Q8FG:00000001 [INF] Entity Framework Core "2.1.1-rtm-30846" initialized '"HeroesDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-09-09T15:19:11.3058236+03:00 0HLGM9PP4Q8FG:00000001 [INF] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2018-09-09T15:19:11.3060479+03:00 0HLGM9PP4Q8FG:00000001 [INF] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2018-09-09T15:19:11.3132328+03:00 0HLGM9PP4Q8FG:00000001 [INF] Executing action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" - Validation state: Valid (dad538d7)
+2018-09-09T15:19:11.3137533+03:00 0HLGM9PP4Q8FG:00000001 [INF] Executing action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" - Validation state: Valid (dad538d7)
+2018-09-09T15:19:11.3148515+03:00 0HLGM9PP4Q8FG:00000001 [INF] Executed action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.5945ms. (50a9e262)
+2018-09-09T15:19:11.3158400+03:00 0HLGM9PP4Q8FG:00000001 [INF] Executing ObjectResult, writing value of type '"BackToMe.Models.Heroe[]"'. (8a1b66c8)
+2018-09-09T15:19:11.3169453+03:00 0HLGM9PP4Q8FG:00000001 [INF] Executed action "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" in 45.1406ms (afa2e885)
+2018-09-09T15:19:11.3149983+03:00 0HLGM9PP4Q8FG:00000001 [INF] Executed action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.5945ms. (50a9e262)
+2018-09-09T15:19:11.3175082+03:00 0HLGM9PP4Q8FG:00000001 [INF] Request finished in 47.5586ms 200 application/json; charset=utf-8 (791a596a)
+2018-09-09T15:19:11.3159912+03:00 0HLGM9PP4Q8FG:00000001 [INF] Executing ObjectResult, writing value of type '"BackToMe.Models.Heroe[]"'. (8a1b66c8)
+2018-09-09T15:19:11.3170880+03:00 0HLGM9PP4Q8FG:00000001 [INF] Executed action "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" in 45.1406ms (afa2e885)
+2018-09-09T15:19:11.3176429+03:00 0HLGM9PP4Q8FG:00000001 [INF] Request finished in 47.5586ms 200 application/json; charset=utf-8 (791a596a)

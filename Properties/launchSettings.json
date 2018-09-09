@@ -20,7 +20,7 @@
     "BackToMe": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/heroes",
+      "launchUrl": "",
       "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

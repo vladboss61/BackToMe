@@ -13,7 +13,6 @@ var AppComponent = /** @class */ (function () {
     function AppComponent(_http) {
         this._http = _http;
         this.title = 'Hello World and vlad starting LearnAngular';
-        this.sel = 'Bla-bla';
         this.heroes = [];
         this.values = ["Render now", "Now Test", "Third Try"];
         this.ngOnInit();
@@ -32,6 +31,7 @@ var AppComponent = /** @class */ (function () {
             _this.heroes = values.json();
         });
     };
+    AppComponent.sel = 'Bla-bla';
     AppComponent = __decorate([
         Component({
             selector: 'app-root',

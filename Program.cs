@@ -39,13 +39,12 @@ namespace BackToMe
             
             var r = ReferenceEquals(resolved, str);
 
-
             CreateWebHostBuilder(args).Build().Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args)
         {
-            return WebHost.CreateDefaultBuilder(args)                
+            return WebHost.CreateDefaultBuilder(args)     
                 .UseStartup<Startup>();
         }
     }   

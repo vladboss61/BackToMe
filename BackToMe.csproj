@@ -6,7 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\models\" />
+    <None Remove="ClientApp\src\models\Heroe.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Logs\" />
     <Folder Include="Scripts\" />
     <Folder Include="wwwroot\" />
@@ -16,6 +19,10 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
     <PackageReference Include="Serilog.Extensions.Logging.File" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\models\Heroe.ts" />
   </ItemGroup>
 
 </Project>
