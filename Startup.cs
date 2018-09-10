@@ -1,22 +1,22 @@
-﻿using System.IO;
-using BackToMe.Context;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SpaServices.AngularCli;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-
-using BackToMe.Extensions;
-
-namespace BackToMe
+﻿namespace BackToMe
 {
+    using System.IO;
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.SpaServices.AngularCli;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Logging;
+
+    using BackToMe.Extensions;
+    using BackToMe.Interfaces;
+    using BackToMe.Models;
+    using BackToMe.Context;
+
     public class Startup
     {
-        private const string CurrentConnectionToDb = "HeroesDBConnection";
-
         public Startup(
             IConfiguration configuration,
             IHostingEnvironment environment,
@@ -34,16 +34,22 @@ namespace BackToMe
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IDataRepository, HeroesDBaseRepository>();
+            services.AddTransient<LogInformator>();
+
             services.AddDbContext<HeroesDbContext>(
                 options => options
-                    .UseSqlServer(Configuration
-                        .GetConnectionString(CurrentConnectionToDb)));
-
+                    .UseSqlServer(Configuration.GetCurrentConnectionToDb()));
 
             //services.AddSpaStaticFiles(configuration => configuration.RootPath = "ClientApp/dist");
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddCors();
+            services.AddHttpClient();            
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "ClientApp/dist";
+            });
+
 
             //TODO: INVISTIGATE THIS METHOD 
             //services.AddHttpClient();            
@@ -84,13 +90,30 @@ namespace BackToMe
             //app.UseSpaStaticFiles();
             // configure the app for usage as api
 
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseSpaStaticFiles();
             app.UseMvcWithDefaultRoute();
+            
             app.UseMvc(configureRoutes: routes =>
             {
                 logger.LogDebug("Use MVC Routing");
                 routes.MapRoute(name: "default", template: "{controller}/{action=index}/{id}");
             });
             
+             app.UseSpa(spa =>
+            {
+                // To learn more about options for serving an Angular SPA from ASP.NET Core,
+                // see https://go.microsoft.com/fwlink/?linkid=864501
+
+                spa.Options.SourcePath = "ClientApp";
+
+                if (env.IsDevelopment())
+                {
+                    spa.UseAngularCliServer(npmScript: "start");
+                }
+            });
+
             //app.UseSpa(spa =>// sap is single page application
             //{
             //    // To learn more about options for serving an Angular SPA from ASP.NET Core,
@@ -108,8 +131,7 @@ namespace BackToMe
             //});
 
             // позволяет серверу принимать запросы с порта 4200
-            app.UseCors(builder => builder.WithOrigins("http://localhost:4200")); 
-            
+            //app.UseCors(builder => builder.WithOrigins("http://localhost:4200"));            
         }
     }
 }

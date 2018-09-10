@@ -1,6 +1,4 @@
-
-export class Heroe
-{
+export class Heroe {
   constructor(
     public id: number,
     public age: number,

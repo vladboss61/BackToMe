@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Http } from '@angular/http';
-import { Heroe } from 'models/Heroe';
+import { Heroe } from './models/Heroe';
 
 @Component({
   selector: 'app-root',

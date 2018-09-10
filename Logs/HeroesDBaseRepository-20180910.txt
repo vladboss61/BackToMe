@@ -1,0 +1,7 @@
+2018-09-10T22:54:43.5420663+03:00 0HLGNASVTK5I8:00000001 [INF] Executing action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" - Validation state: Valid (dad538d7)
+2018-09-10T22:54:43.5561459+03:00 0HLGNASVTK5I8:00000001 [INF] Executed action method "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 6.7451ms. (50a9e262)
+2018-09-10T22:54:43.5669854+03:00 0HLGNASVTK5I8:00000001 [INF] Executing ObjectResult, writing value of type '"BackToMe.Models.Heroe[]"'. (8a1b66c8)
+2018-09-10T22:54:43.6728240+03:00 0HLGNASVTK5I8:00000001 [INF] Executed action "BackToMe.Controllers.HeroesController.GetHeroes (BackToMe)" in 1085.2333ms (afa2e885)
+2018-09-10T22:54:43.6813480+03:00 0HLGNASVTK5I8:00000001 [INF] Request finished in 1416.7448ms 200 application/json; charset=utf-8 (791a596a)
+2018-09-10T22:54:48.4579625+03:00  [ERR] internal/process/per_thread.js:194
+ (5574a288)
