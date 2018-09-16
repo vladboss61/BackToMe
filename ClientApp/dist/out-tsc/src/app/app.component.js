@@ -13,24 +13,8 @@ var AppComponent = /** @class */ (function () {
     function AppComponent(_http) {
         this._http = _http;
         this.title = 'Hello World and vlad starting LearnAngular';
-        this.heroes = [];
         this.values = ["Render now", "Now Test", "Third Try"];
-        this.ngOnInit();
-        //this.http
-        //  .get('/api/values')
-        //  .subscribe(result => {
-        //      console.log("Request");
-        //    this.values = result as string[];
-        //  },
-        //  error => console.error(error));
     }
-    AppComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        console.log("ngOnInit is activated");
-        this._http.get('/api/heroes').subscribe(function (values) {
-            _this.heroes = values.json();
-        });
-    };
     AppComponent.sel = 'Bla-bla';
     AppComponent = __decorate([
         Component({

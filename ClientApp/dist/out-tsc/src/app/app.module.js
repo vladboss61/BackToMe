@@ -13,13 +13,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HeroesComponent } from './heroes/heroes.component';
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         NgModule({
             declarations: [
-                AppComponent
+                AppComponent,
+                HeroesComponent
             ],
             imports: [
                 BrowserModule,
@@ -30,7 +32,7 @@ var AppModule = /** @class */ (function () {
                 HttpModule
             ],
             providers: [],
-            bootstrap: [AppComponent]
+            bootstrap: [AppComponent, HeroesComponent]
         })
     ], AppModule);
     return AppModule;

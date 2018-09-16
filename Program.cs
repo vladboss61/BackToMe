@@ -12,7 +12,7 @@ namespace BackToMe
     {
         public static void Main(string[] args)
         {
-            var version = Environment.Version;
+            var CLArgs = Environment.GetCommandLineArgs();
 
             var config = new ConfigurationBuilder()
                  .SetBasePath(Directory.GetCurrentDirectory())

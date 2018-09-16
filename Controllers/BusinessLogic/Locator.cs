@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace BackToMe.Controllers.BusinessLogic
+﻿namespace BackToMe.Controllers.BusinessLogic
 {
+    using System;
+    using System.Collections.Generic;
+
     internal class Locator : IServiceLocator
     {
         private static readonly Dictionary<Type, object> services = new Dictionary<Type, object>();

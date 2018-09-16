@@ -1,4 +1,7 @@
-﻿namespace BackToMe
+﻿using System;
+using BackToMe.Controllers.BusinessLogic;
+
+namespace BackToMe
 {
     using System.IO;
     using Microsoft.AspNetCore.Builder;
@@ -34,14 +37,49 @@
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IDataRepository, HeroesDBaseRepository>();
-            services.AddTransient<LogInformator>();
+            ILogger<Startup> logger = LoggerFactory
+                .AddFile(Configuration.GetLogPath("Error CIL args"))
+                .CreateLogger<Startup>();    
+            
+            services.AddScoped<IDataRepository<Hero>, HeroesDBaseRepository>();
+            services.AddTransient<ILogBuilder, LogInformationBuilder>();
 
-            services.AddDbContext<HeroesDbContext>(
-                options => options
-                    .UseSqlServer(Configuration.GetCurrentConnectionToDb()));
+            var logInformationBuilder = services.BuildServiceProvider().GetRequiredService<ILogBuilder>();
 
-                        
+            switch (CILHelper.Mode(Environment.GetCommandLineArgs()))
+            {
+                case DataContextType.Sql:
+                    logger.Log(LogLevel.Information, logInformationBuilder
+                        .FromSource(nameof(Startup))
+                        .FromOperation(nameof(ConfigureServices))
+                        .Information("SQL Data Mode.")
+                        .Build());
+
+                    services.AddDbContext<HeroesDbContext>(
+                        options => options
+                            .UseSqlServer(Configuration.GetCurrentConnectionToDb()));
+                    break;
+                case DataContextType.Memory:
+                    logger.Log(LogLevel.Information, logInformationBuilder
+                        .FromSource(nameof(Startup))
+                        .FromOperation(nameof(ConfigureServices))
+                        .Information("Memory Data Mode.")
+                        .Build());
+
+                    services.AddDbContext<HeroesDbContext>(
+                        options => options
+                            .UseInMemoryDatabase(Configuration.GetCurrentConnectionToDb()));
+                    break;
+                default:
+                    logger.Log(LogLevel.Error, logInformationBuilder
+                        .FromSource(nameof(Startup))
+                        .FromOperation(nameof(ConfigureServices))
+                        .Information("Error into args")
+                        .Build());
+
+                    throw new InvalidOperationException(
+                        $"{nameof(ConfigureServices)}: Cannot choice a mode of data base memory or sql.");
+            }                      
             //services.AddSpaStaticFiles(configuration => configuration.RootPath = "ClientApp/dist");
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -52,7 +90,7 @@
             });
 
 
-            //TODO: INVISTIGATE THIS METHOD 
+            //TODO: INVESTIGATE THIS METHOD 
             //services.AddHttpClient();            
         }
 

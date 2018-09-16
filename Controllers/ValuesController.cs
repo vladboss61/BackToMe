@@ -12,9 +12,10 @@ namespace BackToMe.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]    
-    public class ValuesController : ControllerBase
+    public sealed class ValuesController : ControllerBase
     { 
         public ILogger Logger { get; }
+
         public IConfiguration Configuration { get; }
 
         public ValuesController(

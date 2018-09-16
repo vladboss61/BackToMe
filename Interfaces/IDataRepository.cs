@@ -1,11 +1,19 @@
+
 namespace BackToMe.Interfaces
 {
     using System.Threading.Tasks;
-    using BackToMe.Models;
+    using Models;
+    using Microsoft.AspNetCore.Mvc;
+    using System.Collections.Generic;
 
-    public interface IDataRepository // may be would be change signature of methods 
+    public interface IDataRepository<T> // may be would be change signature of methods 
     {
-        Task AddHeroeAsync(Heroe heroe);
-        Task DeleteHeroeAsync(int id);
+        Task<IActionResult> AddAsync(T hero);
+
+        Task<IActionResult> DeleteAsync(int id);
+
+        Task<ActionResult<T>> Get(int id);
+
+        Task<ActionResult<IList<T>>> GetAll();
     }
 }
