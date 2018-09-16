@@ -12499,11 +12499,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\CSharp\\BackToMe\\BackToMe\\BackToMe.csproj",
+      "projectUniqueName": "D:\\GiHub\\BackToMe\\BackToMe.csproj",
       "projectName": "BackToMe",
-      "projectPath": "D:\\Projects\\CSharp\\BackToMe\\BackToMe\\BackToMe.csproj",
+      "projectPath": "D:\\GiHub\\BackToMe\\BackToMe.csproj",
       "packagesPath": "C:\\Users\\vlad1\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\CSharp\\BackToMe\\BackToMe\\obj\\",
+      "outputPath": "D:\\GiHub\\BackToMe\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -41,6 +41,7 @@
                 options => options
                     .UseSqlServer(Configuration.GetCurrentConnectionToDb()));
 
+                        
             //services.AddSpaStaticFiles(configuration => configuration.RootPath = "ClientApp/dist");
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

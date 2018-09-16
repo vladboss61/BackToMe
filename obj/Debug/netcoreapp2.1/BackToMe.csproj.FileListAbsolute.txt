@@ -12,3 +12,17 @@ D:\Projects\CSharp\BackToMe\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.RazorTarge
 D:\Projects\CSharp\BackToMe\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.dll
 D:\Projects\CSharp\BackToMe\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.pdb
 D:\Projects\CSharp\BackToMe\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.csprojAssemblyReference.cache
+D:\GiHub\BackToMe\bin\Debug\netcoreapp2.1\BackToMe.deps.json
+D:\GiHub\BackToMe\bin\Debug\netcoreapp2.1\BackToMe.runtimeconfig.json
+D:\GiHub\BackToMe\bin\Debug\netcoreapp2.1\BackToMe.runtimeconfig.dev.json
+D:\GiHub\BackToMe\bin\Debug\netcoreapp2.1\BackToMe.dll
+D:\GiHub\BackToMe\bin\Debug\netcoreapp2.1\BackToMe.pdb
+D:\GiHub\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.csprojAssemblyReference.cache
+D:\GiHub\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.csproj.CoreCompileInputs.cache
+D:\GiHub\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.RazorAssemblyInfo.cache
+D:\GiHub\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.RazorAssemblyInfo.cs
+D:\GiHub\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.AssemblyInfoInputs.cache
+D:\GiHub\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.AssemblyInfo.cs
+D:\GiHub\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.RazorTargetAssemblyInfo.cache
+D:\GiHub\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.dll
+D:\GiHub\BackToMe\obj\Debug\netcoreapp2.1\BackToMe.pdb

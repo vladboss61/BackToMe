@@ -31,7 +31,6 @@ namespace BackToMe.Context
 
             logger.LogDebug("Created data base! After EnsureCreated");
         }
-        public DbSet<Heroe> Heroes { get; }
-        
+        public DbSet<Heroe> Heroes { get; }        
     }
 }

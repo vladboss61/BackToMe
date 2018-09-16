@@ -33,7 +33,7 @@ namespace BackToMe.Models
             Logger.Log(LogLevel.Information, 
                         LogInformator.FromSource(nameof(HeroesDBaseRepository))
                                      .FromOperation(nameof(AddHeroeAsync))
-                                    .Information("AddHeroes").Build());
+                                     .Information("AddHeroes").Build());
              return Task.CompletedTask;
             //accsses for data base by EF 
         }
