@@ -1,0 +1,1 @@
+2018-09-18T21:16:41.4443568+03:00  [INF]  Source : Startup  Operation : ConfigureServices  SQL Data Mode.  (8eb28f8a)

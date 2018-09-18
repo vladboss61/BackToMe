@@ -46,7 +46,7 @@ namespace BackToMe
 
             var logInformationBuilder = services.BuildServiceProvider().GetRequiredService<ILogBuilder>();
 
-            switch (CILHelper.Mode(Environment.GetCommandLineArgs()))
+            switch (CLIHelper.ModeOfEntityRepository(Environment.GetCommandLineArgs()))
             {
                 case DataContextType.Sql:
                     logger.Log(LogLevel.Information, logInformationBuilder

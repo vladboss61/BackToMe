@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HeroesComponent } from './heroes/heroes.component';
+import { HeroService } from './hero.service';
+import { LoggerService } from './services/logger.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent
+    HeroesComponent,
   ],
   imports:
     [
@@ -23,7 +25,8 @@ import { HeroesComponent } from './heroes/heroes.component';
       FormsModule,
       HttpModule
     ],
-  providers: [],
+  providers: [LoggerService,  HeroService], //  registrate services as DI into tree of all injectable values in scope of app.module
   bootstrap: [AppComponent, HeroesComponent]
 })
+
 export class AppModule { }

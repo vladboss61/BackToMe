@@ -37,7 +37,7 @@
                          .CreateLogger<ValuesController>() ?? throw new ArgumentNullException(nameof(loggerFactory));
         }
 
-        // GET api/values
+        // GET api/heroes
         [HttpGet("/api/heroes")]
         public async Task<ActionResult<IList<Hero>>> GetHeroes()
         {
@@ -61,7 +61,7 @@
         // POST api/
         [HttpPost]
         public async Task<IActionResult> Post(
-            [FromBody]Hero hero)
+            [FromBody] Hero hero)
         {
             Logger.Log(LogLevel.Debug, 
                                 LogInform.FromSource(nameof(HeroesController))
@@ -74,7 +74,7 @@
 
         // PUT api/heroes/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]Hero value)
+        public void Put(int id, [FromBody] Hero value)
         {
             
         }
