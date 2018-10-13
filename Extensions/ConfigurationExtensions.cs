@@ -11,12 +11,15 @@ namespace BackToMe.Extensions
     {
         private const string FileExpansion = ".txt";
 
-        private const string CurrentConnectionToDb = "HeroesDBConnection";     
-        
-        public static string GetCurrentConnectionToDb(this IConfiguration configuration) => 
-            configuration.GetConnectionString(CurrentConnectionToDb);
+        private const string CurrentConnectionStringToDb = "HeroesDBConnection";
+
+        public static string GetConnectionToDb(this IConfiguration configuration) => 
+            configuration.GetConnectionString(CurrentConnectionStringToDb);
+
+        public static string GetLocalDataContext(this IConfiguration configuration) =>
+            configuration.GetSection("LocalRepository")["JsonPath"];
 
         public static string GetLogPath(this IConfiguration configuration, string nameOfLogFile) =>
-            Path.Combine(configuration?.GetSection("Logging")?["Path"], $"{nameOfLogFile}{FileExpansion}");
+            Path.Combine(configuration?.GetSection("Logging")["Path"], $"{nameOfLogFile}{FileExpansion}");
     }
 }

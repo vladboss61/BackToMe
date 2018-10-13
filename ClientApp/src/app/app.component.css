@@ -5,9 +5,36 @@ ul {
 ul span {
   border: dotted;  
 }
+
 div img{
   width: 400px;
 } 
+
 li span{
   background-color: aqua;
+}
+
+section > mat-card{
+  margin-left: 10%;  
+  margin-right: 10%;  
+}
+
+mat-card mat-card-title{
+  text-align: center;
+}
+
+.left-card{ 
+  float: left;
+  width: 20%;
+ 
+}
+
+.right-card{
+  float: right;
+  width: 20%;
+}
+
+.angularImg{
+  /*border: dotted;*/
+  text-align: center;
 }

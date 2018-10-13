@@ -12,6 +12,8 @@ namespace BackToMe
     {
         public static void Main(string[] args)
         {
+            var mappedVariable = Environment.GetEnvironmentVariables();
+            
             var CLArgs = Environment.GetCommandLineArgs();
 
             var config = new ConfigurationBuilder()

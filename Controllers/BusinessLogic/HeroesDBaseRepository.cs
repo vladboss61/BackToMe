@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace BackToMe.Controllers.BusinessLogic
 {
     using System;
@@ -9,7 +11,6 @@ namespace BackToMe.Controllers.BusinessLogic
     using Interfaces;
     using Models;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.Logging;
 
@@ -17,35 +18,37 @@ namespace BackToMe.Controllers.BusinessLogic
     internal class HeroesDBaseRepository : IDataRepository<Hero>
     {
         public ILogger Logger { get; }
-        public HeroesDbContext HeroesDbContext { get; } 
+        public IDbContext<Hero> HeroesDbContext { get; }
         public ILogBuilder LogInformationBuilder { get; }
         public IConfiguration Configuration { get; }
 
         public HeroesDBaseRepository(
-         HeroesDbContext heroesDbContext,
+         IDbContext<Hero> dbContext,
          ILoggerFactory loggerFactory,
          ILogBuilder logInformationBuilder,
          IConfiguration configuration)
         {
             Configuration = configuration ?? throw new ArgumentNullException(nameof(configuration)); ;
-            LogInformationBuilder = logInformationBuilder ??  throw new ArgumentNullException(nameof(logInformationBuilder));
-            HeroesDbContext = heroesDbContext ?? throw new ArgumentNullException(nameof(heroesDbContext));
 
-            Logger = loggerFactory
-                                .AddFile(Configuration.GetLogPath(nameOfLogFile: nameof(HeroesDBaseRepository)))
+            LogInformationBuilder = logInformationBuilder ?? throw new ArgumentNullException(nameof(logInformationBuilder));
+
+            HeroesDbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
+
+            Logger = loggerFactory.AddFile(Configuration.GetLogPath(nameof(HeroesDBaseRepository)))
                                 .CreateLogger(nameof(HeroesDBaseRepository));
         }
 
         public async Task<IActionResult> AddAsync(Hero hero)
-        {                    
-            Logger.Log(LogLevel.Information, 
+        {
+            Logger.Log(LogLevel.Information,
                         LogInformationBuilder.FromSource(nameof(HeroesDBaseRepository))
                                      .FromOperation(nameof(AddAsync))
                                      .Information("Add Hero")
                                      .Build());
+
             await HeroesDbContext
-                .Heroes
-                .AddAsync(hero);
+                    .DataContext
+                    .AddAsync(hero);
 
             return new StatusCodeResult(201);
         }
@@ -61,7 +64,7 @@ namespace BackToMe.Controllers.BusinessLogic
             return await Task.Run<ActionResult>(() =>
             {
                 var findHero = HeroesDbContext
-                    .Heroes
+                    .DataContext
                     .FirstOrDefault(hero => hero.Id.Equals(id));
 
                 if (findHero is null)
@@ -69,7 +72,10 @@ namespace BackToMe.Controllers.BusinessLogic
                     return new StatusCodeResult(404);
                 }
 
-                HeroesDbContext.Remove(findHero);
+                HeroesDbContext
+                    .DataContext
+                    .Remove(findHero);
+
                 return new StatusCodeResult(201);
             }).ConfigureAwait(false);
         }
@@ -89,10 +95,8 @@ namespace BackToMe.Controllers.BusinessLogic
         {
             //List<Hero> heroes = HeroesDbContext.Heroes.AsEnumerable().ToList();
 
-            //return new OkObjectResult(await Task.FromResult(heroes));
-            return new ObjectResult(await Task.FromResult(new List<Hero>() { 
-                new Hero {Id = 1, Age = 200, Name = "Lord off", Sex = true}, 
-                new Hero { Id = 2, Age = 200, Name = "Lord off", Sex = true }}));
+            return new ObjectResult(await Task.Run(() => HeroesDbContext.DataContext
+                                                                        .ToList()));
         }
     }
 }

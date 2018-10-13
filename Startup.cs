@@ -20,6 +20,12 @@ namespace BackToMe
 
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+
+        public ILoggerFactory LoggerFactory { get; }
+
+        public IHostingEnvironment HostingEnvironment { get; }
+
         public Startup(
             IConfiguration configuration,
             IHostingEnvironment environment,
@@ -29,66 +35,22 @@ namespace BackToMe
             HostingEnvironment = environment;
             LoggerFactory = loggerFactory;
         }
-
-        public IConfiguration Configuration { get; }
-        public ILoggerFactory LoggerFactory { get; }
-        public IHostingEnvironment HostingEnvironment { get; }
-
+       
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
-            ILogger<Startup> logger = LoggerFactory
-                .AddFile(Configuration.GetLogPath("Error CIL args"))
-                .CreateLogger<Startup>();    
-            
-            services.AddScoped<IDataRepository<Hero>, HeroesDBaseRepository>();
+        {              
             services.AddTransient<ILogBuilder, LogInformationBuilder>();
+            services.AddLocalDataContext();
 
-            var logInformationBuilder = services.BuildServiceProvider().GetRequiredService<ILogBuilder>();
-
-            switch (CLIHelper.ModeOfEntityRepository(Environment.GetCommandLineArgs()))
-            {
-                case DataContextType.Sql:
-                    logger.Log(LogLevel.Information, logInformationBuilder
-                        .FromSource(nameof(Startup))
-                        .FromOperation(nameof(ConfigureServices))
-                        .Information("SQL Data Mode.")
-                        .Build());
-
-                    services.AddDbContext<HeroesDbContext>(
-                        options => options
-                            .UseSqlServer(Configuration.GetCurrentConnectionToDb()));
-                    break;
-                case DataContextType.Memory:
-                    logger.Log(LogLevel.Information, logInformationBuilder
-                        .FromSource(nameof(Startup))
-                        .FromOperation(nameof(ConfigureServices))
-                        .Information("Memory Data Mode.")
-                        .Build());
-
-                    services.AddDbContext<HeroesDbContext>(
-                        options => options
-                            .UseInMemoryDatabase(Configuration.GetCurrentConnectionToDb()));
-                    break;
-                default:
-                    logger.Log(LogLevel.Error, logInformationBuilder
-                        .FromSource(nameof(Startup))
-                        .FromOperation(nameof(ConfigureServices))
-                        .Information("Error into args")
-                        .Build());
-
-                    throw new InvalidOperationException(
-                        $"{nameof(ConfigureServices)}: Cannot choice a mode of data base memory or sql.");
-            }                      
             //services.AddSpaStaticFiles(configuration => configuration.RootPath = "ClientApp/dist");
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
             services.AddHttpClient();            
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
             });
-
 
             //TODO: INVESTIGATE THIS METHOD 
             //services.AddHttpClient();            
@@ -97,20 +59,12 @@ namespace BackToMe
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            var logger = loggerFactory
-                .AddConsole()
-                .AddFile(Configuration.GetLogPath(nameof(Startup)))
-                .CreateLogger<Startup>();
-
-            logger.LogDebug("Start configure File");
             if (env.IsDevelopment())
             {
-                logger.LogDebug($"Is dev mode: {env.IsDevelopment()}");
                 app.UseDeveloperExceptionPage();
             }
             else
             {
-                logger.LogDebug("Not Dev");
                 app.UseHsts();
             }
 
@@ -136,7 +90,6 @@ namespace BackToMe
             
             app.UseMvc(configureRoutes: routes =>
             {
-                logger.LogDebug("Use MVC Routing");
                 routes.MapRoute(name: "default", template: "{controller}/{action=index}/{id}");
             });
             

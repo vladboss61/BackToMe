@@ -9,20 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { Http } from '@angular/http';
+import { LoggerService } from './services/logger.service';
+import { LogLevle } from './businesslogic/LogLevle';
 var AppComponent = /** @class */ (function () {
-    function AppComponent(_http) {
+    function AppComponent(_http, _logger) {
         this._http = _http;
+        this._logger = _logger;
         this.title = 'Hello World and vlad starting LearnAngular';
+        this.sel = 'Bla-bla';
         this.values = ["Render now", "Now Test", "Third Try"];
+        _logger.logInfoToConsole(LogLevle.Info, "AppComponent", "Rendered");
     }
-    AppComponent.sel = 'Bla-bla';
     AppComponent = __decorate([
         Component({
             selector: 'app-root',
             templateUrl: './app.component.html',
             styleUrls: ['./app.component.css']
         }),
-        __metadata("design:paramtypes", [Http])
+        __metadata("design:paramtypes", [Http, LoggerService])
     ], AppComponent);
     return AppComponent;
 }());

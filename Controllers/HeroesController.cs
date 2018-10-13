@@ -7,18 +7,20 @@
     using Microsoft.Extensions.Logging;
     using Microsoft.Extensions.Configuration;
 
-    using BackToMe.Extensions;
-    using BackToMe.Models;
-    using BackToMe.Context;
-    using BackToMe.Interfaces;
+    using Extensions;
+    using Models;
+    using Interfaces;
 
     [Route("api/[controller]")]
     [ApiController]
     public sealed class HeroesController : ControllerBase
     {    
         public ILogger Logger { get; }
+
         public IConfiguration Configuration { get; }
+
         public IDataRepository<Hero> DataRepository { get; }
+
         public ILogBuilder LogInform { get; } 
 
         public HeroesController(
@@ -41,11 +43,6 @@
         [HttpGet("/api/heroes")]
         public async Task<ActionResult<IList<Hero>>> GetHeroes()
         {
-            Logger.Log(LogLevel.Debug, 
-                LogInform.FromSource(nameof(HeroesController))
-                         .FromOperation(nameof(GetHeroes))
-                         .Build());
-
             return await DataRepository.GetAll();
         }
 

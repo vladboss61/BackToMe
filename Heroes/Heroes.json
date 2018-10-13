@@ -1,0 +1,26 @@
+﻿[
+  {
+    "Id": 1,
+    "Name": "Vlad",
+    "Age": 22,
+    "Sex": true
+  },
+  {
+    "Id": 2,
+    "Name": "Vlad",
+    "Age": 21,
+    "Sex": true
+  },
+  {
+    "Id": 3,
+    "Name": "Vlad",
+    "Age": 23,
+    "Sex": true
+  },
+  {
+    "Id": 4,
+    "Name": "Vlad",
+    "Age": 22,
+    "Sex": true
+  }
+]

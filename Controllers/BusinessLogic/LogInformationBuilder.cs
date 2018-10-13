@@ -6,29 +6,26 @@ namespace BackToMe.Models
 
     public sealed class LogInformationBuilder : ILogBuilder
     {
-        private const string ExceptionError = "Invalid builder";
-
-        private readonly StringBuilder _build = new StringBuilder(string.Empty);
+        private readonly StringBuilder _stringBuilder = new StringBuilder();
 
         public ILogBuilder FromSource(string nameOfSource)
         {
-            _build.Append($" Source : {nameOfSource} ");
+            _stringBuilder.Append($" Source : {nameOfSource} ");
             return this; 
         }
         public ILogBuilder FromOperation(string nameOfOperation)
         {
-            _build.Append($" Operation : {nameOfOperation} ");
+            _stringBuilder.Append($" Operation : {nameOfOperation} ");
             return this;
         }
         public ILogBuilder Information(string logInformation)
         {
-            _build.Append($" {logInformation} ");
+            _stringBuilder.Append($" {logInformation} ");
             return this;
         }
         public string Build()
-        {
-            var buildString = _build?.ToString();
-            return !string.IsNullOrEmpty(buildString) ? buildString : throw new InvalidOperationException(ExceptionError);            
+        {            
+            return _stringBuilder.ToString();
         }        
     } 
 }

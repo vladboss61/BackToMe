@@ -10,8 +10,7 @@ import { nameof } from './businesslogic/nameof';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public title = 'Hello World and vlad starting LearnAngular';
-  public sel = 'Bla-bla';
+  public title = 'Welcome to Vlad Varvashenko Blog';
   public values: string[];
 
   constructor(private _http: Http, private _logger: LoggerService) {// DI http into constructor 
