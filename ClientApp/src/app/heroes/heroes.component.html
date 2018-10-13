@@ -3,7 +3,7 @@
   </li>  
 <li>
   <mat-list>
-      <mat-list-item *ngFor="let hero of heroes">Hero from Back-End: {{hero.name}}</mat-list-item>
+      <mat-list-item *ngFor="let hero of (heroes$ | async)">Hero from Back-End: {{hero.name}}</mat-list-item>
   </mat-list>  
 </li>
   

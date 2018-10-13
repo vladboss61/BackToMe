@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 import { Hero } from '../models/Hero';
 import { LoggerService } from '../services/logger.service';
 import { LogLevle } from '../businesslogic/LogLevle';
+import { HeroService } from '../services/hero.service'; 
 
 @Component({
   selector: 'app-heroes',
@@ -14,9 +15,9 @@ export class HeroesComponent implements OnInit {
   
   private static Hero : string ;    
   
-  public heroes: Hero[] = [];
+  public heroes$: Observable<Hero[]>;
   
-  constructor(private _http: Http, private _logger: LoggerService)     
+  constructor(private _http: Http, private _logger: LoggerService, private _heroService: HeroService)     
     {
       HeroesComponent.Hero = "Lord";
     }
@@ -26,10 +27,7 @@ export class HeroesComponent implements OnInit {
       LogLevle.Info,
       "HeroesComponent",
       "OnInit Into HeroesComponent selected into from service.");
-          
-      this._http.get("/api/heroes").subscribe(values => {
-      this.heroes = values.json() as Hero[];      
-    });
-    
-  }
+
+      this.heroes$ = this._heroService.getAllHeroes();        
+  }  
 }

@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HeroesComponent } from './heroes/heroes.component';
-import { HeroService } from './hero.service';
+import { HeroService } from './services/hero.service';
 import { LoggerService } from './services/logger.service';
 import { MatCardModule, MatListModule, MatLineModule } from "@angular/material";
 
