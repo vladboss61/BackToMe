@@ -12,8 +12,7 @@ import { HttpModule } from '@angular/http';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroService } from './services/hero.service';
 import { LoggerService } from './services/logger.service';
-import { MatCardModule, MatListModule, MatLineModule } from "@angular/material";
-
+import { MatCardModule, MatListModule, MatLineModule, MatFormFieldModule, MatInputModule } from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -22,7 +21,9 @@ import { MatCardModule, MatListModule, MatLineModule } from "@angular/material";
   ],
   imports:
     [
-      MatLineModule,
+      MatLineModule, 
+      MatFormFieldModule, 
+      MatInputModule,
       MatCardModule,
       MatListModule,
       BrowserModule,

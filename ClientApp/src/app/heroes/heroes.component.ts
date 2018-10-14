@@ -13,14 +13,19 @@ import { HeroService } from '../services/hero.service';
 })
 export class HeroesComponent implements OnInit {
   
-  private static Hero : string ;    
+  private static Hero : string ;      
   
   public heroes$: Observable<Hero[]>;
   
+  public hero$: Observable<Hero>;
+
+  public isWatched : boolean;
+  
   constructor(private _http: Http, private _logger: LoggerService, private _heroService: HeroService)     
-    {
+  {
+    this.isWatched = false;
       HeroesComponent.Hero = "Lord";
-    }
+  }
 
   ngOnInit() {
     this._logger.logInfoToConsole(
@@ -28,6 +33,22 @@ export class HeroesComponent implements OnInit {
       "HeroesComponent",
       "OnInit Into HeroesComponent selected into from service.");
 
-      this.heroes$ = this._heroService.getAllHeroes();        
-  }  
+      this.heroes$ = this._heroService.getAllHeroes();       
+  }
+
+  inputIdHandler($event)
+  {
+    let targetHero = $event.target.value;
+    let id = Number.parseInt(targetHero);
+    
+    if(targetHero !== "" && !Number.isNaN(id))
+    {      
+        this.hero$ = this._heroService.getHeroById(id)        
+        this.isWatched = true;      
+    }
+    else
+    {
+      this.isWatched = false;
+    }    
+  }
 }

@@ -38,7 +38,7 @@ namespace BackToMe.Controllers.BusinessLogic
                                 .CreateLogger(nameof(HeroesDBaseRepository));
         }
 
-        public async Task<IActionResult> AddAsync(Hero hero)
+        public async Task<ActionResult> AddAsync(Hero hero)
         {
             Logger.Log(LogLevel.Information,
                         LogInformationBuilder.FromSource(nameof(HeroesDBaseRepository))
@@ -53,7 +53,7 @@ namespace BackToMe.Controllers.BusinessLogic
             return new StatusCodeResult(201);
         }
 
-        public async Task<IActionResult> DeleteAsync(int id)
+        public async Task<ActionResult> DeleteAsync(int id)
         {
             Logger.Log(LogLevel.Information,
                 LogInformationBuilder.FromSource(nameof(HeroesDBaseRepository))
@@ -80,7 +80,7 @@ namespace BackToMe.Controllers.BusinessLogic
             }).ConfigureAwait(false);
         }
 
-        public async Task<ActionResult<Hero>> Get(int id)
+        public async Task<ActionResult<Hero>> GetAsync(int id)
         {
             //var findHero = await HeroesDbContext.Heroes.FirstOrDefaultAsync((hero)=> hero.Id.Equals(id));
             //if (findHero == null)
@@ -91,7 +91,7 @@ namespace BackToMe.Controllers.BusinessLogic
             return new OkObjectResult(await Task.FromResult(new Hero { Id = 1, Age = 200, Name = "Lord off", Sex = true }));
         }
 
-        public async Task<ActionResult<IList<Hero>>> GetAll()
+        public async Task<ActionResult<IList<Hero>>> GetAllAsync()
         {
             //List<Hero> heroes = HeroesDbContext.Heroes.AsEnumerable().ToList();
 

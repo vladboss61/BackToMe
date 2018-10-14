@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
 namespace BackToMe.Extensions
@@ -47,6 +48,7 @@ namespace BackToMe.Extensions
                 return new StreamReader(jsonPath);
             });
 
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<JsonSerializer>();
         }
     }

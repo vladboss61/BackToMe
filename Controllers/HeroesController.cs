@@ -43,7 +43,7 @@
         [HttpGet("/api/heroes")]
         public async Task<ActionResult<IList<Hero>>> GetHeroes()
         {
-            return await DataRepository.GetAll();
+            return await DataRepository.GetAllAsync();
         }
 
         // GET api/heroes/5
@@ -51,8 +51,7 @@
         public async Task<ActionResult<Hero>> Get(int id)
         {
             Logger.Log(LogLevel.Debug, $"{nameof(Get)} id.");
-            return await Task.FromResult(new Hero() { Id = 1, Name = "Vlad", Age = 20, Sex = true })
-                .ConfigureAwait(false);
+            return await DataRepository.GetAsync(id);
         }
 
         // POST api/

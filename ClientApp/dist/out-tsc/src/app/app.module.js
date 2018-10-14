@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { NgModule } from '@angular/core';
+import { NgModule, } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 //import { HttpModule } from '@angular/http';
 //import { HttpClientModule } from '@angular/common/http';
@@ -14,8 +14,9 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HeroesComponent } from './heroes/heroes.component';
-import { HeroService } from './hero.service';
+import { HeroService } from './services/hero.service';
 import { LoggerService } from './services/logger.service';
+import { MatCardModule, MatListModule, MatLineModule } from "@angular/material";
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -26,6 +27,9 @@ var AppModule = /** @class */ (function () {
                 HeroesComponent,
             ],
             imports: [
+                MatLineModule,
+                MatCardModule,
+                MatListModule,
                 BrowserModule,
                 BrowserAnimationsModule,
                 //HttpClientModule,  

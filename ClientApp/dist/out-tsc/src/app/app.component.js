@@ -15,8 +15,7 @@ var AppComponent = /** @class */ (function () {
     function AppComponent(_http, _logger) {
         this._http = _http;
         this._logger = _logger;
-        this.title = 'Hello World and vlad starting LearnAngular';
-        this.sel = 'Bla-bla';
+        this.title = 'Welcome to Vlad Varvashenko Blog';
         this.values = ["Render now", "Now Test", "Third Try"];
         _logger.logInfoToConsole(LogLevle.Info, "AppComponent", "Rendered");
     }

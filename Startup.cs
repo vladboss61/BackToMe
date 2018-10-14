@@ -38,13 +38,12 @@ namespace BackToMe
        
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {              
-            services.AddTransient<ILogBuilder, LogInformationBuilder>();
+        {
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddLocalDataContext();
+            services.AddTransient<ILogBuilder, LogInformationBuilder>();
 
             //services.AddSpaStaticFiles(configuration => configuration.RootPath = "ClientApp/dist");
-
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddHttpClient();            
             services.AddSpaStaticFiles(configuration =>
@@ -56,7 +55,7 @@ namespace BackToMe
             //services.AddHttpClient();            
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline. Middleware 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
@@ -88,7 +87,7 @@ namespace BackToMe
             app.UseSpaStaticFiles();
             app.UseMvcWithDefaultRoute();
             
-            app.UseMvc(configureRoutes: routes =>
+            app.UseMvc(routes =>
             {
                 routes.MapRoute(name: "default", template: "{controller}/{action=index}/{id}");
             });

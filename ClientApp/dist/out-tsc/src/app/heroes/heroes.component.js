@@ -11,21 +11,18 @@ import { Component } from '@angular/core';
 import { Http } from '@angular/http';
 import { LoggerService } from '../services/logger.service';
 import { LogLevle } from '../businesslogic/LogLevle';
+import { HeroService } from '../services/hero.service';
 var HeroesComponent = /** @class */ (function () {
-    function HeroesComponent(_http, _logger) {
+    function HeroesComponent(_http, _logger, _heroService) {
         this._http = _http;
         this._logger = _logger;
-        this.heroes = [];
+        this._heroService = _heroService;
         HeroesComponent_1.Hero = "Lord";
     }
     HeroesComponent_1 = HeroesComponent;
     HeroesComponent.prototype.ngOnInit = function () {
-        var _this = this;
         this._logger.logInfoToConsole(LogLevle.Info, "HeroesComponent", "OnInit Into HeroesComponent selected into from service.");
-        this._http.get("/api/heroes").subscribe(function (values) {
-            _this._logger.logInfoToConsole(LogLevle.Warnin, "HeroesComponent", "Subscribe from service.");
-            _this.heroes = values.json();
-        });
+        this.heroes$ = this._heroService.getAllHeroes();
     };
     HeroesComponent = HeroesComponent_1 = __decorate([
         Component({
@@ -33,8 +30,7 @@ var HeroesComponent = /** @class */ (function () {
             templateUrl: './heroes.component.html',
             styleUrls: ['./heroes.component.css']
         }),
-        __metadata("design:paramtypes", [Http,
-            LoggerService])
+        __metadata("design:paramtypes", [Http, LoggerService, HeroService])
     ], HeroesComponent);
     return HeroesComponent;
     var HeroesComponent_1;

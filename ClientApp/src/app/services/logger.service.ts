@@ -14,4 +14,5 @@ export class LoggerService {
     informaion : string): void {
       console.log(`${LogLevle[loglevle]} : ${source} :  ${informaion}`);  
   }
+  //private log(...args: string[]){ /*test only test*/}
 }

@@ -1,4 +1,12 @@
-  <li *ngFor="let hero of heroes"> 
+<li>
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="id of heroe" (input)="inputIdHandler($event)">
+        </mat-form-field>      
+      </form>
+</li>
+<li *ngIf="isWatched">Hero by id from backend: {{(hero$ | async)?.id}} {{(hero$ | async)?.name}}  </li> <!--TODO: explore that mistake-->
+<li *ngFor="let hero of heroes"> 
     Hero from Back-End: {{hero.name}} 
   </li>  
 <li>
